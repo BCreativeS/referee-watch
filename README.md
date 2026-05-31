@@ -246,14 +246,98 @@ Custom duration also supported.
 ```text
 referee-watch/
 │
+├── platformio.ini
+├── README.md
+├── .gitignore
+│
 ├── include/
+│   ├── BoardConfig.h
+│   ├── AppConfig.h
+│   ├── Theme.h
+│   └── Constants.h
+│
 ├── src/
+│   │
+│   ├── main.cpp
+│   │
 │   ├── core/
+│   │   ├── AppController.h
+│   │   ├── AppController.cpp
+│   │   ├── MatchEngine.h
+│   │   ├── MatchEngine.cpp
+│   │   ├── DatabaseManager.h
+│   │   ├── DatabaseManager.cpp
+│   │   ├── SettingsManager.h
+│   │   ├── SettingsManager.cpp
+│   │   ├── EventFormatter.h
+│   │   ├── EventFormatter.cpp
+│   │   ├── LogicTestSuite.h
+│   │   └── LogicTestSuite.cpp
+│   │
 │   ├── hardware/
+│   │   ├── HapticManager.h
+│   │   ├── HapticManager.cpp
+│   │   ├── BatteryManager.h
+│   │   ├── BatteryManager.cpp
+│   │   ├── SoundManager.h
+│   │   ├── SoundManager.cpp
+│   │   ├── GPSManager.h
+│   │   ├── GPSManager.cpp
+│   │   ├── DisplayManager.h
+│   │   └── DisplayManager.cpp
+│   │
 │   ├── ui/
+│   │   ├── UIManager.h
+│   │   ├── UIManager.cpp
+│   │   │
+│   │   ├── screens/
+│   │   │   ├── SplashScreen.cpp
+│   │   │   ├── HomeScreen.cpp
+│   │   │   ├── MatchSetupScreen.cpp
+│   │   │   ├── TeamSetupScreen.cpp
+│   │   │   ├── GoalScreen.cpp
+│   │   │   ├── YellowCardScreen.cpp
+│   │   │   ├── RedCardScreen.cpp
+│   │   │   ├── SubstitutionScreen.cpp
+│   │   │   ├── EventsScreen.cpp
+│   │   │   ├── MatchMenuScreen.cpp
+│   │   │   ├── SettingsScreen.cpp
+│   │   │   └── MatchSummaryScreen.cpp
+│   │   │
+│   │   ├── components/
+│   │   │   ├── ScoreBar.cpp
+│   │   │   ├── TimerWidget.cpp
+│   │   │   ├── TeamColorBadge.cpp
+│   │   │   ├── CardEventTile.cpp
+│   │   │   └── BatteryWidget.cpp
+│   │   │
+│   │   └── styles/
+│   │       ├── Colors.h
+│   │       ├── Fonts.h
+│   │       └── Styles.cpp
+│   │
 │   ├── connectivity/
+│   │   ├── BLEManager.h
+│   │   ├── BLEManager.cpp
+│   │   ├── WifiManager.h
+│   │   ├── WifiManager.cpp
+│   │   ├── LoRaManager.h
+│   │   └── LoRaManager.cpp
+│   │
 │   └── utils/
+│       ├── Logger.h
+│       ├── Logger.cpp
+│       ├── TimeUtils.h
+│       ├── TimeUtils.cpp
+│       ├── StringUtils.h
+│       └── StringUtils.cpp
+│
+├── data/
+│   └── sample_matches/
 │
 ├── test/
-├── data/
+│   ├── test_match_engine/
+│   ├── test_database/
+│   └── test_events/
+│
 └── lib/
